@@ -7,6 +7,7 @@ export default {
       "primary-night-violet": "#21093A",
       "secondary-khaki": "#D9D4A7",
       "secondary-plump": "#AA93FF",
+      "secondary-lavender": "#E3D2FF",
       "almost-white": "#fbfbf9",
     },
     fontFamily: {
