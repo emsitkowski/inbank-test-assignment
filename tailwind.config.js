@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {},
+    fontFamily: {
+      primary: ["Bitter", "sans-serif"],
+      secondary: ["Inter", "sans-serif"],
+    },
   },
   plugins: [],
 };
