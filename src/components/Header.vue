@@ -1,6 +1,6 @@
 <template>
-  <header class="p-4 md:p-6">
-    <Logo class="h-10 md:h-16" />
+  <header class="p-4 lg:p-6">
+    <Logo class="h-10 lg:h-16" />
   </header>
 </template>
 
