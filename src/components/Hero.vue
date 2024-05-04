@@ -1,0 +1,25 @@
+<template>
+  <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
+    <div
+      class="flex flex-col basis-5/12 justify-center items-center px-6 py-16 lg:px-10 lg:py-56 bg-secondary-khaki rounded-[100px] lg:rounded-[200px] text-center"
+    >
+      <h1 class="text-h1 font-primary mb-4">
+        <span class="inline-block mb-4 text-base not-italic font-secondary">Mini loan</span><br />
+        Take charge of unexpected costs
+      </h1>
+      <p class="mb-6">
+        Finance unforeseen expenses with Inbank. A quick and easy application process with an instant credit decision.
+      </p>
+      <Button label="Apply now" />
+    </div>
+    <div class="flex basis-7/12 rounded-[100px] lg:rounded-[200px] overflow-hidden">
+      <img class="object-cover w-full h-full" src="@/assets/img/man-in-the-bathroom-doing-a-laundry.jpg" alt="" />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import Button from "../components/Button.vue";
+</script>
+
+<style scoped></style>
