@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #fbfbf9;
-  font-family: "Inter", sans-serif;
+  @apply bg-almost-white text-primary-night-violet font-secondary p-4 lg:px-10;
+}
+
+.text-h1 {
+  @apply text-3xl lg:text-7xl italic font-normal;
 }
