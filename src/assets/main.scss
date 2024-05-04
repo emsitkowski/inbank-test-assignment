@@ -9,5 +9,5 @@ body {
 }
 
 .text-h1 {
-  @apply text-3xl lg:text-7xl italic font-normal;
+  @apply font-primary text-3xl lg:text-7xl italic font-normal;
 }
