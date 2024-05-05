@@ -58,6 +58,7 @@
 
 <script setup lang="ts">
 import { ref, computed, type Ref } from "vue";
+import { useCalculatorStore } from "@/store/calculator";
 import CalculatorField from "./CalculatorField.vue";
 import Button from "./Button.vue";
 import Modal from "../components/Modal.vue";
@@ -74,6 +75,10 @@ const selectedValues = ref({
 
 // Handle calculator form submit
 function handleSubmit(e: Event) {
+  // Save loan period and amount values to store
+  useCalculatorStore().savePeriod(selectedValues.value.period);
+  useCalculatorStore().saveAmount(selectedValues.value.amount);
+
   // Open details form modal
   showModal.value = true;
 }
