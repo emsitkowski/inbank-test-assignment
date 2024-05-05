@@ -12,11 +12,12 @@
 </template>
 
 <script setup lang="ts">
+import { useCalculatorStore } from "@/store/calculator";
 import Button from "../components/Button.vue";
 import { Field, Form, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 
-type UserDetails = {
+type ClientDetails = {
   name: String;
   surname: String;
   number: String;
@@ -65,6 +66,9 @@ const schema = yup.object({
   income: yup.number().moreThan(100).required(),
 });
 
-// Handle form data
-async function handleSubmit(values: UserDetails) {}
+// Handle form submit
+async function handleSubmit(values: ClientDetails) {
+  // Save client details to store
+  useCalculatorStore().saveClientDetails(values);
+}
 </script>
