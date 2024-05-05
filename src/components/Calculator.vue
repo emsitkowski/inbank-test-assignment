@@ -65,6 +65,7 @@ function handleSubmit(e: Event) {
   console.log(selectedValues.value);
 }
 
+// Retrieve range slider update value
 function handleRangeUpdate(e: Ref | number) {
   if (typeof e === "object") {
     selectedValues.value.amount = e.value;
@@ -73,5 +74,6 @@ function handleRangeUpdate(e: Ref | number) {
   }
 }
 
+// Calculate monthly payment value
 const monthlyPayment = computed(() => (selectedValues.value.amount / selectedValues.value.period).toFixed(2));
 </script>
