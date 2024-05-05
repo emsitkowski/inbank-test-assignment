@@ -88,7 +88,7 @@ const props = defineProps({
 const selectedValue = ref<string>(props.minRange);
 
 onMounted(() => {
-  emit("field-update", props.type === "number" ? selectedValue : props.options![selectedValue.value - 1]);
+  handleChange();
 });
 
 function handleChange() {
