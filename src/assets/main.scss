@@ -24,6 +24,10 @@ input {
   background: none;
 }
 
+input[type="text"] {
+  @apply rounded-lg border border-light-gray px-4 py-2 placeholder:text-dark-gray;
+}
+
 input[type="range"] {
   height: 36px; // needed for Firefox
   --_c: color-mix(in srgb, theme(colors.primary-night-violet), #000 var(--p, 0%));
