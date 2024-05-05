@@ -9,6 +9,9 @@ export default {
       "secondary-plump": "#AA93FF",
       "secondary-lavender": "#E3D2FF",
       "almost-white": "#fbfbf9",
+      "light-gray": "#DEDEDE",
+      "dark-gray": "#606060",
+      error: "#e63946",
     },
     fontFamily: {
       primary: ["Bitter", "sans-serif"],
