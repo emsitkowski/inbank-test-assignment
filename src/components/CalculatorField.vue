@@ -73,25 +73,25 @@ const props = defineProps({
     required: true,
   },
   maxRange: {
-    type: Number,
+    type: String,
     required: true,
   },
   minRange: {
-    type: Number,
-    default: 1,
+    type: String,
+    default: "1",
   },
   options: {
     type: Array<string | number>,
   },
 });
 
-const selectedValue = ref<number>(props.minRange);
+const selectedValue = ref<string>(props.minRange);
 
 onMounted(() => {
   emit("field-update", props.type === "number" ? selectedValue : props.options![selectedValue.value - 1]);
 });
 
 function handleChange() {
-  emit("field-update", props.type === "number" ? selectedValue : props.options![selectedValue.value - 1]);
+  emit("field-update", props.type === "number" ? selectedValue : props.options![Number(selectedValue.value) - 1]);
 }
 </script>

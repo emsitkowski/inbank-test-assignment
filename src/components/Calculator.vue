@@ -16,15 +16,15 @@
             type="number"
             input-label="Amount"
             :range-labels="['300 €', '7,200 €']"
-            :max-range="7200"
-            :min-range="300"
+            max-range="7200"
+            min-range="300"
             @field-update="handleRangeUpdate"
           />
           <CalculatorField
             type="options"
             input-label="Period"
             :range-labels="['2 months', '72 months']"
-            :max-range="8"
+            max-range="8"
             :options="['2', '4', '8', '16', '32', '48', '60', '72']"
             @field-update="handleRangeUpdate"
           />
