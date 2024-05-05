@@ -48,6 +48,11 @@
         </div>
       </form>
     </div>
+
+    <!-- Details form modal -->
+    <Modal :show="showModal" header-text="Personal details" @close="showModal = false">
+      <PersonalDetailsForm />
+    </Modal>
   </div>
 </template>
 
@@ -55,14 +60,22 @@
 import { ref, computed, type Ref } from "vue";
 import CalculatorField from "./CalculatorField.vue";
 import Button from "./Button.vue";
+import Modal from "../components/Modal.vue";
+import PersonalDetailsForm from "./PersonalDetailsForm.vue";
 
+// Show or hide modal ref
+const showModal = ref<boolean>(false);
+
+// Keeps selected values in a ref
 const selectedValues = ref({
   period: 0,
   amount: 0,
 });
 
+// Handle calculator form submit
 function handleSubmit(e: Event) {
-  console.log(selectedValues.value);
+  // Open details form modal
+  showModal.value = true;
 }
 
 // Retrieve range slider update value
