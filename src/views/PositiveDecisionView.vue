@@ -6,7 +6,7 @@ import { useCalculatorStore } from "@/store/calculator";
 const { amount, period } = useCalculatorStore();
 
 // Compute loan values
-const loanAmount = computed(() => amount.toFixed(2));
+const loanAmount = computed(() => amount);
 const loanPeriod = computed(() => period);
 const monthlyPayment = computed(() => (amount / period).toFixed(2));
 </script>
