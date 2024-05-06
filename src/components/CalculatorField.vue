@@ -18,11 +18,13 @@
       </div>
     </div>
 
-    <!-- Input fields -->
     <div class="basis-3/12">
+      <!-- Input label -->
       <label class="relative left-2 z-10 text-xs font-medium px-2 bg-almost-white rounded-full" for="range">{{
         inputLabel
       }}</label>
+
+      <!-- Select menu -->
       <div
         v-if="$props.type === 'options'"
         class="relative -top-3 flex justify-between items-center bg-almost-white border border-primary-night-violet rounded-lg"
@@ -33,6 +35,7 @@
         <img class="absolute right-6 pointer-events-none" src="@/assets/img/trailing-icon.svg" alt="" />
       </div>
 
+      <!-- Number input -->
       <div
         v-if="$props.type === 'number'"
         class="relative -top-3 flex justify-between items-center px-4 py-3 bg-almost-white border border-primary-night-violet rounded-lg"
