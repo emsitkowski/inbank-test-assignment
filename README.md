@@ -1,6 +1,6 @@
 # inbank-test-assignment
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a hypothetical Vue.js application built with Vite and Tailwind CSS, aimed at demonstrating the functionality of a loan application system for Inbank.
 
 ## Recommended IDE Setup
 
