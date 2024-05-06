@@ -14,10 +14,12 @@ body {
 
 .text-h1 {
   @apply font-primary text-3xl lg:text-7xl font-normal;
+  line-height: 116%;
 }
 
 .text-h2 {
   @apply font-primary text-3xl lg:text-5xl font-normal;
+  line-height: 106%;
 }
 
 /* Theme form styles */
