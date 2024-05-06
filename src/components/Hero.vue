@@ -11,7 +11,7 @@
       <p class="mb-6">
         {{ header }}
       </p>
-      <Button v-if="buttonLabel" :label="buttonLabel" />
+      <Button v-if="button" :label="buttonLabel!" :link="buttonLink" />
     </div>
     <div class="flex basis-7/12 rounded-[100px] lg:rounded-[200px] overflow-hidden">
       <img class="object-cover w-full h-full" :src="coverImageSrc" alt="" />
@@ -38,7 +38,13 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  button: {
+    type: Boolean,
+  },
   buttonLabel: {
+    type: String,
+  },
+  buttonLink: {
     type: String,
   },
 });
