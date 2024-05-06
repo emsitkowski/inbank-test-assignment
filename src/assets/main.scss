@@ -16,6 +16,10 @@ body {
   @apply font-primary text-3xl lg:text-7xl font-normal;
 }
 
+.text-h2 {
+  @apply font-primary text-3xl lg:text-5xl font-normal;
+}
+
 /* Theme form styles */
 select,
 input {
