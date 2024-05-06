@@ -12,6 +12,9 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 import { useCalculatorStore } from "@/store/calculator";
 import Button from "../components/Button.vue";
 import { Field, Form, ErrorMessage } from "vee-validate";
@@ -70,5 +73,19 @@ const schema = yup.object({
 async function handleSubmit(values: ClientDetails) {
   // Save client details to store
   useCalculatorStore().saveClientDetails(values);
+
+  // Redirect to positive or negative decision page based on client's income
+  if (Number(useCalculatorStore().getClientDetails.income) > 1000) {
+    router.push({
+      name: "positive",
+    });
+  } else {
+    router.push({
+      name: "negative",
+    });
+  }
+
+  // Set successfull submission status to true
+  useCalculatorStore().setSubmissionStatus(true);
 }
 </script>
