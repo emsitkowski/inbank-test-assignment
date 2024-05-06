@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 type ClientDetails = {
   name: String;
@@ -10,6 +10,7 @@ type ClientDetails = {
 };
 
 export const useCalculatorStore = defineStore("calculator", () => {
+  const isSuccessfullySubmitted = ref<Boolean>(false);
   const period = ref<number>(0);
   const amount = ref<number>(0);
   const clientDetails = ref<ClientDetails>({
@@ -19,6 +20,11 @@ export const useCalculatorStore = defineStore("calculator", () => {
     email: "",
     income: "",
   });
+
+  // Set submission status
+  function setSubmissionStatus(value: Boolean) {
+    isSuccessfullySubmitted.value = value;
+  }
 
   // Save loan period
   function savePeriod(newValue: number) {
@@ -35,5 +41,18 @@ export const useCalculatorStore = defineStore("calculator", () => {
     Object.assign(clientDetails.value, details);
   }
 
-  return { period, amount, clientDetails, savePeriod, saveAmount, saveClientDetails };
+  // Get client personal info
+  const getClientDetails = computed(() => clientDetails.value);
+
+  return {
+    isSuccessfullySubmitted,
+    setSubmissionStatus,
+    period,
+    amount,
+    clientDetails,
+    savePeriod,
+    saveAmount,
+    saveClientDetails,
+    getClientDetails,
+  };
 });
