@@ -1,5 +1,11 @@
 <template>
-  <button class="px-6 py-3 rounded-full" :class="buttonVariants[variant as ButtonVariant]">{{ label }}</button>
+  <button
+    class="px-6 py-3 rounded-full disabled:bg-disabled-gray-lighter disabled:text-disabled-gray"
+    :class="buttonVariants[variant as ButtonVariant]"
+    :disabled="disabled"
+  >
+    {{ label }}
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -15,10 +21,13 @@ const props = defineProps({
     required: true,
     default: "primary",
   },
+  disabled: {
+    type: Boolean,
+  },
 });
 
 const buttonVariants = {
   primary: "bg-almost-white",
-  secondary: "bg-secondary-plump",
+  secondary: "bg-secondary-plump hover:bg-secondary-plump-lighter active:bg-secondary-plump-darker",
 };
 </script>
