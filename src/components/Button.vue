@@ -1,11 +1,22 @@
 <template>
   <button
+    v-if="!link"
     class="px-6 py-3 rounded-full disabled:bg-disabled-gray-lighter disabled:text-disabled-gray"
     :class="buttonVariants[variant as ButtonVariant]"
     :disabled="disabled"
   >
     {{ label }}
   </button>
+
+  <a
+    v-else
+    :href="link"
+    class="px-6 py-3 rounded-full disabled:bg-disabled-gray-lighter disabled:text-disabled-gray"
+    :class="buttonVariants[variant as ButtonVariant]"
+    :disabled="disabled"
+  >
+    {{ label }}
+  </a>
 </template>
 
 <script setup lang="ts">
@@ -23,6 +34,9 @@ const props = defineProps({
   },
   disabled: {
     type: Boolean,
+  },
+  link: {
+    type: String,
   },
 });
 
